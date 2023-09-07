@@ -8,11 +8,52 @@
  Version: 0.1
  */
 
-
-.main-navigation {
-    background-color: rgb(25, 122, 122) !important;
+// Effet de fade-in des sections
+@keyframes fade-in-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-300px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-body {
-    background: aqua !important ;
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(600px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.banner {
+    animation: fade-in-down 2s ease;
+}
+
+.story, #studio, .site-footer, .banner img {
+    animation: fade-in-up 2s ease;
+}
+
+p {
+    animation-fill-mode : none;
+}
+
+
+// Rotation des fleurs
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.story__article::after, h2::after, #studio h2::before, .site-footer::before, .site-footer::after, ul::after {
+    animation: spin 12s linear infinite;
 }
