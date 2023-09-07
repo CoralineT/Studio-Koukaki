@@ -11,7 +11,7 @@
 @keyframes fade-in-down {
   0% {
     opacity: 0;
-    transform: translateY(-300px);
+    transform: translateY(-200px);
   }
   100% {
     opacity: 1;
@@ -21,7 +21,7 @@
 @keyframes fade-in-up {
   0% {
     opacity: 0;
-    transform: translateY(600px);
+    transform: translateY(300px);
   }
   100% {
     opacity: 1;
@@ -30,14 +30,20 @@
 }
 .banner {
   animation: fade-in-down 2s ease;
+  background-image: url("../assets/Studio Koukaki-image header 1.png");
 }
 
 .story, #studio, .site-footer, .banner img {
-  animation: fade-in-up 2s ease;
+  animation: fade-in-up 2s ease-in-out;
 }
 
-p {
-  animation-fill-mode: none;
+.story__article p, #place p, #studio p {
+  animation: fade-in-down 2s ease-in-out;
+}
+
+.story h2::after {
+  width: 154px;
+  height: 154px;
 }
 
 @keyframes spin {
@@ -50,4 +56,79 @@ p {
 }
 .story__article::after, h2::after, #studio h2::before, .site-footer::before, .site-footer::after, ul::after {
   animation: spin 12s linear infinite;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 span, h3 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: transform 1s, opacity 0.5s;
+}
+
+main {
+  overflow: hidden;
+}
+
+#studio h2 {
+  margin-bottom: 45px;
+}
+#studio > div {
+  width: 59.66%;
+}
+#studio > div p {
+  width: 43.5%;
+}
+#studio > div::before {
+  top: 45%;
+}
+#studio > div::after {
+  width: 108px;
+  height: 108px;
+}
+
+.site-footer {
+  display: block;
+  padding-top: 11em;
+}
+.site-footer ul {
+  margin-top: 280px;
+}
+.site-footer ul::after {
+  bottom: -31.5em;
+}
+.site-footer::before {
+  left: 11em;
+  top: 7em;
+}
+.site-footer::after {
+  bottom: 40.8em;
+  right: -5em;
+  width: 168px;
+  height: 168px;
+}
+
+.nomination-oscar {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.nomination-oscar h3 {
+  background-image: url("../assets/Rectangle-oscars.png");
+}
+.nomination-oscar span {
+  text-align: start;
+  padding: 18px;
+}
+.nomination-oscar img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }

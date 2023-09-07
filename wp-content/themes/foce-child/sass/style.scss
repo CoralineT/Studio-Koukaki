@@ -8,11 +8,12 @@
  Version: 0.1
  */
 
+
 // Effet de fade-in des sections
 @keyframes fade-in-down {
     0% {
         opacity: 0;
-        transform: translateY(-300px);
+        transform: translateY(-200px);
     }
     100% {
         opacity: 1;
@@ -23,7 +24,7 @@
 @keyframes fade-in-up {
     0% {
         opacity: 0;
-        transform: translateY(600px);
+        transform: translateY(300px);
     }
     100% {
         opacity: 1;
@@ -33,18 +34,24 @@
 
 .banner {
     animation: fade-in-down 2s ease;
+    background-image: url('../assets/Studio\ Koukaki-image\ header\ 1.png');
 }
 
 .story, #studio, .site-footer, .banner img {
-    animation: fade-in-up 2s ease;
+    animation: fade-in-up 2s ease-in-out;
 }
 
-p {
-    animation-fill-mode : none;
+.story__article p, #place p, #studio p {
+	animation: fade-in-down 2s ease-in-out;
 }
 
 
 // Rotation des fleurs
+.story h2::after {
+    width: 154px;
+    height: 154px;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -56,4 +63,86 @@ p {
 
 .story__article::after, h2::after, #studio h2::before, .site-footer::before, .site-footer::after, ul::after {
     animation: spin 12s linear infinite;
+}
+
+
+// Titres Apparition au scroll
+
+.invisible {
+    opacity: 0;
+}
+
+.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 span, h3 span {  
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: transform 1s, opacity 0.5s;
+}
+
+
+
+// Section nomination & restructuration CSS
+main {
+    overflow: hidden;
+}
+
+#studio {
+    h2 {
+    margin-bottom: 45px;
+    }
+    > div {
+        width: 59.66%;
+        p {
+            width: 43.5%;
+        }
+        &::before {
+            top: 45%;
+        }
+        &::after {
+            width: 108px;
+            height: 108px;
+        }
+    }
+}
+
+.site-footer {
+	display: block;
+	padding-top: 11em;
+    ul {
+        margin-top : 280px;
+        &::after {
+            bottom: -31.5em;
+        }
+    }
+    &::before {
+        left: 11em;
+        top: 7em;
+    }
+    &::after{
+        bottom: 40.8em;
+        right: -5em;
+        width: 168px;
+        height: 168px;
+    }
+}
+
+.nomination-oscar{
+	display: flex;
+	justify-content: center;
+    margin-top: 40px;
+    h3{
+        background-image: url("../assets/Rectangle-oscars.png");
+    }
+    span {
+        text-align: start;
+        padding: 18px;
+    }
+    img{
+        object-fit: contain;
+    }
 }
