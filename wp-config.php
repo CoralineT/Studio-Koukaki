@@ -26,7 +26,7 @@ define( 'DB_NAME', 'studio-koukaki' );
 define( 'DB_USER', 'admin-koukaki' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'admin' );
+define( 'DB_PASSWORD', 'admin-koukaki' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
