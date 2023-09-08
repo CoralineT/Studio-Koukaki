@@ -16,3 +16,4 @@ const title = titles[i];
 observer.observe(title)
 }
 
+

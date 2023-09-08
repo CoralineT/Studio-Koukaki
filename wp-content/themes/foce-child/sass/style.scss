@@ -34,10 +34,9 @@
 
 .banner {
     animation: fade-in-down 2s ease;
-    background-image: url('../assets/Studio\ Koukaki-image\ header\ 1.png');
 }
 
-.story, #studio, .site-footer, .banner img {
+.story, #studio, .site-footer {
     animation: fade-in-up 2s ease-in-out;
 }
 
@@ -146,3 +145,112 @@ main {
         object-fit: contain;
     }
 }
+
+
+// Video header
+.title_story{
+	background: none;
+	position: absolute;
+	top: 40;
+}
+
+#background-video {
+    object-fit: fill;
+    position: sticky;
+    left: 90px;
+    top: 80px;
+    z-index: 0;
+
+}
+.banner img {
+    z-index: 1;
+    position: absolute;
+    margin-top: -7%;
+    width: 53em;
+}
+
+// Flottement du logo
+
+@keyframes floatLogo{
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    25% {
+        transform: translate3d(-15px, 10px, 0);
+    }
+    50%{
+          transform: translate3d(15px, 0px, 0);
+    }
+    75%{
+          transform: translate3d(-15px, 10px, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.banner img {
+    animation: floatLogo 6s 2s ease-in-out infinite, fade-in-up 2s ease-in-out;
+}
+    
+// Responsive
+@media screen and (max-width: 768px) {
+    #background-video{
+        display: none;
+    }
+    .banner {
+        background-image: url('../assets/image-header.png');
+        min-height: 460px;
+    }
+    .story #place {
+        position: relative;
+        > div {
+            margin: 42px 12px;
+            width: 86%;
+            p {
+                padding-top: 128px;
+            }
+        }
+            h3 {
+                left: 102px;
+                top: 129px;
+                position: absolute;
+                padding: 1em 1em;
+            }
+    } 
+    #studio {
+        h2 {
+            font-size: 2rem;
+        }
+        > div {
+            width: 184.66%;
+            text-align: center;
+            margin: 20px 24px;
+        }
+    }
+    .nomination-oscar {
+        display: flex;
+        flex-direction: column;
+        margin-top: -236px;
+        h3 {
+            background-size: 433px 354px;
+            background-position-y: 129px;
+            top: 145px;
+            position: relative;
+            font-size: 2rem;
+            padding-bottom: 191px;
+            span {
+                text-align: center;
+                padding: 0px;
+                font-size: 26px;
+                margin-top: 155px;
+            }
+        }
+    }
+    .site-footer {
+        padding-top: 1em;
+    }
+} 
+
+
+// Effet de parallax

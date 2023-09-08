@@ -5,7 +5,12 @@ get_header();
 
     <main id="primary" class="site-main">
         <section class="banner">
+            <!-- Ajout video -->
+            <video id="background-video" autoplay muted loop poster="<?php echo get_stylesheet_directory_uri() . '/assets/image-header.png'; ?>">
+                <source src="<?php echo get_stylesheet_directory_uri() . '/assets/video-header.mp4'; ?>" type="video/mp4">
+            </video>
             <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+
         </section>
         <section id="#story" class="story">
             <h2><span>L'histoire</span></h2>
