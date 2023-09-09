@@ -154,19 +154,28 @@ main {
 	top: 40;
 }
 
+.banner {
+    position: relative;
+    img {
+        z-index: 1;
+        position: sticky;
+        margin-top: -7%;
+        width: 53em;
+    }
+}
+
 #background-video {
     object-fit: fill;
-    position: sticky;
-    left: 90px;
-    top: 80px;
+    position: absolute;
+    //left: 90px;
+    left: 0px;
+    top: 0px;
     z-index: 0;
 
 }
-.banner img {
-    z-index: 1;
-    position: absolute;
-    margin-top: -7%;
-    width: 53em;
+
+#story {
+    top: 80px;
 }
 
 // Flottement du logo
@@ -192,6 +201,27 @@ main {
 .banner img {
     animation: floatLogo 6s 2s ease-in-out infinite, fade-in-up 2s ease-in-out;
 }
+
+
+// parallaxe
+body {
+    &::after {
+        height: 20px;
+        position: fixed;
+        top: calc(50% - 1);
+        left: 0;
+        right: 0;
+        background-color: red;
+        z-index: 200;
+        content: "";
+    }
+}
+#logo-parallax {
+    z-index: 10;
+}
+
+
+
     
 // Responsive
 @media screen and (max-width: 768px) {
@@ -251,6 +281,3 @@ main {
         padding-top: 1em;
     }
 } 
-
-
-// Effet de parallax

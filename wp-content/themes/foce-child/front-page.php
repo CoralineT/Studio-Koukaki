@@ -9,7 +9,7 @@ get_header();
             <video id="background-video" autoplay muted loop poster="<?php echo get_stylesheet_directory_uri() . '/assets/image-header.png'; ?>">
                 <source src="<?php echo get_stylesheet_directory_uri() . '/assets/video-header.mp4'; ?>" type="video/mp4">
             </video>
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+            <div id="logo-parallax"><img id="logo-banner" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants"></div>
 
         </section>
         <section id="#story" class="story">

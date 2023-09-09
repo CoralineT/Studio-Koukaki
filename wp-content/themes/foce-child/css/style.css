@@ -138,20 +138,28 @@ main {
   top: 40;
 }
 
+.banner {
+  position: relative;
+}
+
 #background-video {
   -o-object-fit: fill;
      object-fit: fill;
-  position: sticky;
-  left: 90px;
-  top: 80px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
   z-index: 0;
 }
 
 .banner img {
   z-index: 1;
-  position: absolute;
+  position: sticky;
   margin-top: -7%;
   width: 53em;
+}
+
+#story {
+  top: 80px;
 }
 
 @keyframes floatLogo {
