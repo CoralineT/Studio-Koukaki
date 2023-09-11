@@ -34,7 +34,7 @@ function onScroll() {
 }
 
 /**
- * Calcule la position de l'élément par rapport au haut de la page
+ * Calcul de la position de l'élément par rapport au haut de la page
  * @param {HTMLElement} element 
  * @return {number}
  */
@@ -45,3 +45,21 @@ function offsetTopFunction(element, acc = 0) {
     return acc + element.offsetTop;
 }
 
+
+
+// Caroussel Swiper
+
+let swiper = new Swiper(".swiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: false,
+    },
+  })
+  
