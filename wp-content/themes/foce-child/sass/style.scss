@@ -204,18 +204,7 @@ main {
 
 
 // parallaxe
-body {
-    &::after {
-        height: 20px;
-        position: fixed;
-        top: calc(50% - 1);
-        left: 0;
-        right: 0;
-        background-color: red;
-        z-index: 200;
-        content: "";
-    }
-}
+
 #logo-parallax {
     z-index: 10;
 }
@@ -284,16 +273,36 @@ body {
 
 
 // Slider personnages
-.swiper {
-    background-color: red !important;
-  }
+
   
-  .swiper-slide {
-    background-position: center;
+.swiper-slide {
+background-position: center;
+background-size: cover;
+img {
+    display: block;
+    width: 400px;
+    max-width: none;
+    }
+}
+
+  
+// Animation nuages
+.story #place {
+    background: url(../assets/Studio\ Koukaki-image\ lieu\ 1.png);
     background-size: cover;
-    img {
-        display: block;
-        width: 500px;
-      }
-  }
-  
+}
+
+#grand-nuage {
+    position: absolute;
+    top: 69%;
+    display: block;
+	left: calc(-3% + 300px);
+    filter: blur(14px);
+}
+
+#petit-nuage {
+    position: absolute;
+    top: 78%;
+	left: calc(-21% + 300px);
+    filter: blur(14px);
+}

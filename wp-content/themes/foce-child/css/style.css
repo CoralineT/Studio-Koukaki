@@ -128,8 +128,7 @@ main {
   padding: 18px;
 }
 .nomination-oscar img {
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .title_story {
@@ -141,21 +140,19 @@ main {
 .banner {
   position: relative;
 }
-
-#background-video {
-  -o-object-fit: fill;
-     object-fit: fill;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: 0;
-}
-
 .banner img {
   z-index: 1;
   position: sticky;
   margin-top: -7%;
   width: 53em;
+}
+
+#background-video {
+  object-fit: fill;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 0;
 }
 
 #story {
@@ -181,6 +178,10 @@ main {
 }
 .banner img {
   animation: floatLogo 6s 2s ease-in-out infinite, fade-in-up 2s ease-in-out;
+}
+
+#logo-parallax {
+  z-index: 10;
 }
 
 @media screen and (max-width: 768px) {
@@ -238,3 +239,34 @@ main {
     padding-top: 1em;
   }
 }
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+.swiper-slide img {
+  display: block;
+  width: 400px;
+  max-width: none;
+}
+
+.story #place {
+  background: url(../assets/Studio\ Koukaki-image\ lieu\ 1.png);
+  background-size: cover;
+}
+
+#grand-nuage {
+  position: absolute;
+  top: 69%;
+  display: block;
+  left: calc(-3% + 300px);
+  filter: blur(14px);
+}
+
+#petit-nuage {
+  position: absolute;
+  top: 78%;
+  left: calc(-21% + 300px);
+  filter: blur(14px);
+}
+
+/*# sourceMappingURL=style.css.map */

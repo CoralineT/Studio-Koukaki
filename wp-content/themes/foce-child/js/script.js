@@ -54,6 +54,13 @@ let swiper = new Swiper(".swiper", {
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: "auto",
+    autoplay: {
+        delay: 3000,
+      },
+    keyboard: {
+        enabled: true,
+        onlyInViewport: false,
+    },
     coverflowEffect: {
       rotate: 50,
       stretch: 0,
@@ -63,3 +70,17 @@ let swiper = new Swiper(".swiper", {
     },
   })
   
+
+
+// Parallaxe nuages
+const bigCloud = document.getElementById("grand-nuage")
+const littleCloud = document.getElementById("petit-nuage")
+
+
+window.addEventListener('scroll', () => {
+    const screenY = window.scrollY /2;
+
+    bigCloud.style.setProperty("transform", `translateX(${screenY + -300}px)`);
+    littleCloud.style.setProperty("transform", `translateX(${screenY + -300}px)`);
+    
+})
