@@ -247,6 +247,7 @@ main {
   width: 100%;
   position: fixed;
   z-index: 1;
+  display: block;
   top: -100%;
   padding-top: 60px;
   transition: all 1s ease;
@@ -274,6 +275,7 @@ main {
 }
 #nav-burger.active {
   top: 0;
+  left: 0;
   width: 100%;
   text-align: center;
   padding-top: 80px;
@@ -465,6 +467,72 @@ main {
   .site-footer {
     padding-top: 1em;
   }
+  .marguerite-burger {
+    top: 199px;
+    right: 75px;
+    width: 100px;
+  }
+  .chat-bleu-burger {
+    left: 54px;
+    top: 213px;
+    width: 100px;
+  }
+  .orchid-burger {
+    top: 118px;
+    width: 100px;
+  }
+  .flower-burger {
+    top: 500px;
+    left: 70px;
+    width: 39px;
+  }
+  .chat-gris-burger {
+    top: 487px;
+    right: 100px;
+    width: 100px;
+  }
+  .random-flower-burger {
+    top: 406px;
+    right: -33px;
+    width: 66px;
+  }
+  .chat-roux-burger {
+    bottom: 89px;
+    left: 14px;
+    width: 71px;
+  }
+  .hibiscus {
+    bottom: -153px;
+    right: -139px;
+    width: 294px;
+  }
+  .link-burger {
+    font-size: 42px;
+  }
+  .main-navigation {
+    height: 100px;
+  }
+  .main-navigation ul {
+    display: flex !important;
+    position: fixed;
+    top: 79px;
+    right: 0;
+    left: 0;
+  }
+  .main-navigation ul .site-title {
+    display: block !important;
+  }
+  .main-navigation .line {
+    display: none;
+  }
+  #nav-burger {
+    background-color: #FFD5A2;
+  }
+  #nav-burger .close {
+    top: -12px;
+    right: 20px;
+    font-size: 65px;
+  }
 }
 @media screen and (max-width: 500px) {
   .banner img {
@@ -489,6 +557,9 @@ main {
   #place #petit-nuage {
     top: 93%;
     left: calc(-180% - 300px);
+  }
+  #nav-menu {
+    display: flex;
   }
 }
 
