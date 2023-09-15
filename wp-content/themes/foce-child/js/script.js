@@ -20,6 +20,11 @@ observer.observe(title)
  // parallaxe video/logo
 const logo = document.getElementById("logo-parallax");
 const offsetlogo = logo.offsetHeight / 2;
+console.log(offsetlogo /2);
+const section = document.getElementsByClassName("banner");
+const offsetSection = section[0].offsetTop;
+console.log(offsetSection);
+//logo.offsetParent.offsetTop
 
 document.addEventListener('scroll', onScroll);
 
@@ -27,8 +32,9 @@ function onScroll() {
     const screenY = window.scrollY;
     const logoY = offsetTopFunction(logo) - offsetlogo;
     const diffY = logoY - screenY;
+    console.log(diffY * -1)
 
-    if(screenY < logo.offsetParent.offsetTop + offsetlogo /2) {
+    if(screenY < offsetSection + offsetlogo /2) {
         logo.style.setProperty("transform", `translateY(${diffY * -1}px)`);
     }
 }
@@ -80,7 +86,33 @@ const littleCloud = document.getElementById("petit-nuage")
 window.addEventListener('scroll', () => {
     const screenY = window.scrollY /2;
 
-    bigCloud.style.setProperty("transform", `translateX(${screenY + -300}px)`);
-    littleCloud.style.setProperty("transform", `translateX(${screenY + -300}px)`);
+    bigCloud.style.setProperty("transform", `translateX(${screenY + 300}px)`);
+    littleCloud.style.setProperty("transform", `translateX(${screenY + 300}px)`);
     
 })
+
+
+
+// MENU BURGER
+
+const navBurger = document.getElementById("nav-burger");
+const openButton = document.getElementById("button-open");
+const closeButton = document.getElementById("button-close");
+const iconeOpenButton = document.getElementById("burger-icon");
+console.log(iconeOpenButton.style);
+
+openButton.onclick = openNav;
+closeButton.onclick = closeNav;
+
+function openNav() {
+   navBurger.classList.add("active");
+   iconeOpenButton.style.display = "none";
+}
+
+function closeNav() {
+   navBurger.classList.remove("active");
+}
+
+document.querySelectorAll(".link-burger").forEach(n => n.addEventListener("click", () => {
+   navBurger.classList.remove("active");
+ }));
