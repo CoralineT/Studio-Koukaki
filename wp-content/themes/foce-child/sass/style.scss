@@ -45,9 +45,16 @@
 
 
 // Rotation des fleurs
+:root {
+    --rotation: 12s;
+}
 .story h2::after {
     width: 154px;
     height: 154px;
+}
+#studio h2::after {
+    width: 125px;
+    height: 125px;
 }
 
 @keyframes spin {
@@ -60,7 +67,7 @@
 }
 
 .story__article::after, h2::after, #studio h2::before, .site-footer::before, .site-footer::after, ul::after {
-    animation: spin 12s linear infinite;
+    animation: spin var(--rotation) linear infinite;
 }
 
 

@@ -1,3 +1,4 @@
+
 //effet d'apparition des titres
 const titles = document.getElementsByTagName('span')
 
@@ -18,35 +19,15 @@ observer.observe(title)
 
 
  // parallaxe video/logo
-const logo = document.getElementById("logo-parallax");
-const offsetlogo = logo.offsetHeight / 2;
+let parallax = document.querySelector("#logo-parallax");
+let imageP = document.querySelector("#logo-banner");
 
-document.addEventListener('scroll', onScroll);
-
-function onScroll() {
-    const screenY = window.scrollY;
-    const logoY = offsetTopFunction(logo) - offsetlogo;
-    const diffY = logoY - screenY;
-    
-    if(screenY < logo.offsetParent.offsetTop + offsetlogo ) {
-        logo.style.setProperty("transform", `translateY(${diffY * -1}px)`);
-    }
-}
-
-
-
-/**
- * Calcul de la position de l'élément par rapport au haut de la page
- * @param {HTMLElement} element 
- * @return {number}
- */
-function offsetTopFunction(element, acc = 0) {
-    if (element.offsetParent) {
-        return offsetTopFunction(element.offsetParent, acc + element.offsetTop);
-    }
-    return acc + element.offsetTop;
-}
-
+window.addEventListener("scroll", function () {
+  let offset = window.scrollY;
+  if ( offset < parallax.offsetParent.offsetTop + parallax.offsetTop) {
+  parallax.style.transform = "translateY(" + offset * 0.7 + "px)";
+  }
+});
 
 
 // Caroussel Swiper
@@ -109,3 +90,51 @@ function closeNav() {
 document.querySelectorAll(".link-burger").forEach(n => n.addEventListener("click", () => {
    navBurger.classList.remove("active");
  }));
+
+
+
+
+  //Fleurs qui accélèrent au scroll
+
+  window.addEventListener("scroll", () => {
+     // Si on scroll, cela accélère la rotation des fleurs
+     root = document.documentElement;
+     var vertical = -1;
+
+       if (window.scrollY != vertical) {
+         vertical = window.scrollY;
+         root.style.setProperty("--rotation", "2s");
+       } else {
+         root.style.setProperty("--rotation", "12s");
+       }
+  
+   });
+
+
+
+
+//   function scrollStop (callback, refresh = 66) {
+
+// 	// Make sure a valid callback was provided
+// 	if (!callback || typeof callback !== 'function') return
+
+// 	// Setup scrolling variable
+// 	let isScrolling;
+
+// 	// Listen for scroll events
+// 	window.addEventListener('scroll', function (event) {
+//         document.documentElement.style.setProperty('--rotation', "2s");
+
+// 		// Clear our timeout throughout the scroll
+// 		window.clearTimeout(isScrolling);
+
+// 		// Set a timeout to run after scrolling ends
+// 		isScrolling = setTimeout(callback, refresh);
+
+// 	}, false);
+
+// }
+
+// scrollStop(function () {
+//     document.documentElement.style.setProperty('--rotation', "12s");
+// })
