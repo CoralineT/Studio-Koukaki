@@ -1,8 +1,13 @@
-<div id="nav-burger">
+<nav id="site-navigation" class="main-navigation">
+
+<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+
+<div id="nav-burger" class="nav_burger">
 
   <a id="button-close" href="#" class="close">&times;</a>
 
   <ul class="menu-burger">
+    
     <img class="logo-burger" src="<?php echo get_stylesheet_directory_uri() . '/assets/logo-menu-burger.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
     <img class="orchid-burger" src="<?php echo get_stylesheet_directory_uri() . '/assets/Orchid.png'; ?> " alt="image d'une orchidé violette">
     <img class="chat-bleu-burger" src="<?php echo get_stylesheet_directory_uri() . '/assets/cat.png'; ?> " alt="image d'un chat bleu">
@@ -20,10 +25,13 @@
   </ul>
 </div>
 
+
 <a href="#" id="button-open">
-  <div id="burger-icon">
-    <div></div>
-    <div></div>
-    <div></div>
-</div>
+  <span id="burger-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+</span>
 </a>
+
+</nav>

@@ -8,7 +8,6 @@
  Version: 0.1
  */
 
-
 // Effet de fade-in des sections
 @keyframes fade-in-down {
     0% {
@@ -159,17 +158,18 @@ main {
     img {
         z-index: 1;
         position: sticky;
-        margin-top: -7%;
-        width: 53em;
+        margin-top: -14%;
+        margin-left: 1%;
+        width: 51em;
     }
 }
 
 #background-video {
     object-fit: fill;
     position: absolute;
-    //left: 90px;
     left: 0px;
     top: 0px;
+    height: 100%;
     z-index: 0;
 
 }
@@ -278,15 +278,42 @@ main {
     }
 }
 
+.site-title {
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1em;
+    display: block;
+    z-index: 2;
+    position: relative;
+}
 
-#nav-burger {
+.nav_burger {
     max-width: 1440px;
-	height: 100%;
-	width: 100%;
 	position: fixed;
+ 	z-index: 1;
+	top : -100%;
+ 	background-color: #FFD5A2;
+ 	padding-top: 60px;
+    overflow: hidden;
+    &.active {
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        padding-top: 80px;
+        animation: down 1s;
+        transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+}
+
+.nav_burger {
+	height: 100%;
 	z-index: 1;
     display: block;
-	top : -100%;
 	padding-top: 60px;
 	transition: all 1s ease;
 	animation: up-menu 1s;
@@ -310,15 +337,7 @@ main {
             }
         }
     }
-    &.active {
-        top: 0;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        padding-top: 80px;
-        animation: down 1s;
-        transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
-    }
+    
     .close {
         position: absolute;
         top: -5px;
@@ -330,24 +349,16 @@ main {
 }
 
 #burger-icon {
-    div {
+    position: absolute;
+    top: 1.5em;
+  	right: 2em;
+    span {
         display: block;
         width: 35px;
         height: 5px;
         background-color: black;
         margin: 6px 0;
     }
-}
-
-
-#button-open {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-}
-
-.site-title {
-	z-index: 2;
 }
 
 
@@ -418,6 +429,105 @@ main {
 
     
 // Responsive
+@media  screen and (max-width: 1270px) {
+    .chat-gris-burger {
+        top: 470px;
+        right: 230px;
+        width: 115px;
+    }
+    .random-flower-burger {
+        top: 409px;
+        right: -41px;
+        width: 87px;
+    }
+    .marguerite-burger {
+        right: 212px;
+        width: 159px;
+    }
+    .chat-bleu-burger {
+        left: 293px;
+        top: 225px;
+        width: 94px;
+    }
+    .orchid-burger {
+        left: -40px;
+        top: 171px;
+        width: 117px;
+    }
+    .chat-roux-burger {
+        bottom: 89px;
+        left: 60px;
+        width: 95px;
+    }
+    .flower-burger {
+        top: 499px;
+        left: 208px;
+        width: 57px;
+    }
+}
+
+@media  screen and (max-width: 1270px) {
+    .chat-bleu-burger {
+        left: 201px;
+        top: 225px;
+    }
+    .marguerite-burger {
+        right: 147px;
+        width: 129px;
+    }
+    .chat-gris-burger {
+        right: 199px;
+        width: 100px;
+    }
+    .chat-roux-burger {
+        left: 60px;
+        width: 95px;
+    }
+    .hibiscus {
+        bottom: -174px;
+        right: -169px;
+        width: 344px;
+    }
+}
+
+@media  screen and (max-width: 1270px) {
+    .orchid-burger {
+        left: -35px;
+        top: 157px;
+        width: 107px;
+    }
+    .chat-bleu-burger {
+        left: 119px;
+    }
+    .flower-burger {
+        top: 478px;
+        left: 96px;
+        width: 40px;
+    }
+    .chat-roux-burger {
+        left: 36px;
+        width: 65px;
+    }
+    .marguerite-burger {
+        right: 106px;
+        width: 114px;
+    }
+    .random-flower-burger {
+        top: 379px;
+        right: -34px;
+        width: 73px;
+    }
+    .chat-gris-burger {
+        right: 128px;
+        width: 85px;
+    }
+    .hibiscus {
+        bottom: -157px;
+        right: -153px;
+        width: 322px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     #background-video{
         display: none;
@@ -425,8 +535,8 @@ main {
     .banner {
         background-image: url('../assets/image-header.png');
         min-height: 460px;
+    
         img {
-            margin-top: -39% !important;
             width: 23em !important;
         }
     }
@@ -576,8 +686,13 @@ main {
             display: none;
         }
     }
-    #nav-burger {
+    .nav_burger {
         background-color: #FFD5A2;
+        display: none;
+        &.active {
+            width: 100%;
+            display: block;
+        }
         .close {
             top: -12px;
             right: 20px;
@@ -586,6 +701,52 @@ main {
     }
 } 
 
+@media screen and (max-width: 600px) {
+    .nav_burger ul li a {
+        font-size: 38px;
+    }
+    .orchid-burger {
+        top: 84px;
+        width: 95px;
+    }
+    .chat-bleu-burger {
+        left: 57px;
+        top: 170px;
+        width: 85px;
+    }
+    .flower-burger {
+        top: 438px;
+    }
+    .chat-roux-burger {
+        bottom: 154px;
+        left: 19px;
+        width: 54px;
+    }
+    .marguerite-burger {
+        top: 146px;
+        right: 41px;
+    }
+    .random-flower-burger {
+        top: 368px;
+        right: -16px;
+        width: 46px;
+    }
+    .chat-gris-burger {
+        top: 449px;
+        right: 62px;
+        width: 75px;
+    }
+    .hibiscus {
+        bottom: -40px;
+        right: -104px;
+        width: 232px;
+    }
+    .logo_burger {
+        margin-bottom: 100px;
+    }
+    
+    
+}
 
 @media screen and (max-width: 500px) {
     .banner {
@@ -618,6 +779,61 @@ main {
     #nav-menu {
         display: flex;
     }
+    .site-title {
+        font-size: 16.5px;
+        padding-top: 25px;
+    }
+    .nav_burger .close {
+        top: -1px;
+        font-size: 51px;
+    }
+    #burger-icon {
+        right: 2em;
+        font-size: 8px;
+    }
+    .logo-burger {
+        margin-bottom: 0;
+    }
+    .nav_burger ul li a {
+        font-size: 29px;
+    }
+    .hibiscus {
+        bottom: -121px;
+        right: -94px;
+        width: 196px;
+    }
+    .orchid-burger {
+        width: 81px;
+        left: -26px;
+    }
+    .chat-bleu-burger {
+        left: 53px;
+        top: 170px;
+        width: 61px;
+    }
+    .chat-roux-burger {
+        bottom: 107px;
+    }
+    .flower-burger {
+        top: 402px;
+        left: 47px;
+        width: 39px;
+    }
+    .chat-gris-burger {
+        top: 382px;
+        right: 13px;
+        width: 58px;
+    }
+    .random-flower-burger {
+        top: 291px;
+        right: -21px;
+        width: 46px;
+    }
+    .marguerite-burger {
+        right: 20px;
+        width: 73px;
+    }
+
 }
 
 
