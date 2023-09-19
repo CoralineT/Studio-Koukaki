@@ -97,44 +97,15 @@ document.querySelectorAll(".link-burger").forEach(n => n.addEventListener("click
   //Fleurs qui accélèrent au scroll
 
   window.addEventListener("scroll", () => {
-     // Si on scroll, cela accélère la rotation des fleurs
      root = document.documentElement;
-     var vertical = -1;
+     let vertical = 300;
 
-       if (window.scrollY != vertical) {
+       if (window.scrollY > vertical) {
          vertical = window.scrollY;
          root.style.setProperty("--rotation", "2s");
-       } else {
+       }
+      else {
          root.style.setProperty("--rotation", "12s");
        }
   
    });
-
-
-
-
-//   function scrollStop (callback, refresh = 66) {
-
-// 	// Make sure a valid callback was provided
-// 	if (!callback || typeof callback !== 'function') return
-
-// 	// Setup scrolling variable
-// 	let isScrolling;
-
-// 	// Listen for scroll events
-// 	window.addEventListener('scroll', function (event) {
-//         document.documentElement.style.setProperty('--rotation', "2s");
-
-// 		// Clear our timeout throughout the scroll
-// 		window.clearTimeout(isScrolling);
-
-// 		// Set a timeout to run after scrolling ends
-// 		isScrolling = setTimeout(callback, refresh);
-
-// 	}, false);
-
-// }
-
-// scrollStop(function () {
-//     document.documentElement.style.setProperty('--rotation', "12s");
-// })

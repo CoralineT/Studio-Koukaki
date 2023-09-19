@@ -498,6 +498,10 @@ main {
 }
 
 @media  screen and (max-width: 1270px) {
+    .banner img {
+        margin-left: 9%;
+        width: 43em;
+    }
     .orchid-burger {
         left: -35px;
         top: 157px;
