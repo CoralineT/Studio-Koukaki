@@ -25,11 +25,5 @@
 
 <?php wp_footer(); ?>
 
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables.net-scroller/1.4.0/dataTables.scroller.min.js">
-</script> -->
-<!-- <script>
-	var s = skrollr.init();
-</script> -->
-
 </body>
 </html>
